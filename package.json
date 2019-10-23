@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-tailwind-motion",
+  "name": "sotos-nakis",
   "private": false,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Marketing site for Sotos Nakis",
   "version": "0.1.0",
   "author": "Sam Goddard <hello@samgoddard.co.uk>",
   "dependencies": {
@@ -48,6 +48,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/samuelgoddard/gatsby-tailwind-motion"
+    "url": "https://github.com/samuelgoddard/sotos-nakis"
   }
 }

@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby x Tailwind x Framer Motion`,
-    description: `An opinionated starter for Gatsby v2 with TailwindCSS, PostCSS and Framer Motion page transitions.`,
+    title: `Sotos Nakis`,
+    description: `Marketing site for Sotos Nakis`,
     author: `@samuelgoddard`,
   },
   plugins: [
