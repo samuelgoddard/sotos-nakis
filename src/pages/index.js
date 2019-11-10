@@ -1,66 +1,66 @@
+import { Link } from "gatsby"
 import React from "react"
 import SEO from "../components/seo"
-import { motion } from 'framer-motion'
+import BackgroundImage from 'gatsby-background-image'
 
-const duration = 0.35
+// import { motion } from 'framer-motion'
 
-const container = {
-  visible: {
-    transition: {
-      when: 'beforeChildren',
-      staggerChildren: 0.2,
-      delayChildren: duration,
-    },
-  },
-}
-const item = {
-  hidden: { y: 20, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-  },
-}
+// const duration = 0.35
 
-const IndexPage = () => {
+// const container = {
+//   visible: {
+//     transition: {
+//       when: 'beforeChildren',
+//       staggerChildren: 0.2,
+//       delayChildren: duration,
+//     },
+//   },
+// }
+// const item = {
+//   hidden: { y: 20, opacity: 0 },
+//   visible: {
+//     y: 0,
+//     opacity: 1,
+//   },
+// }
+
+const IndexPage = ({ data: { home } }) => {
   return (
     <>
-      <SEO title="Home" />
-      <motion.section
-        variants={container}
-        initial="hidden" 
-        animate="visible"
-        className="container"
+      <SEO title={home.title} />
+      <BackgroundImage
+        Tag="div"
+        className="bg-gray-300 h-screen w-full flex items-center justify-center -mt-24 md:-mt-32"
+        fluid={home.featuredCollection.featuredImage.fluid}
       >
-        <motion.div 
-          className="content"
-          variants={item}
-          transition="easeInOut"
-        >
-          <p className="text-lg md:text-xl pl-3 border-l-2 border-black">An opinionated starter for Gatsby v2 with TailwindCSS, PostCSS and Framer Motion page transitions.</p>
-        </motion.div>
-
-        <motion.div 
-          className="content"
-          variants={item}
-          transition="easeInOut"
-        >
-          <hr className="block my-8" />
-        </motion.div>
-
-        <motion.div 
-          className="content"
-          variants={item}
-          transition="easeInOut"
-        >
-          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-          <h2>Lorem ipsum dolor sit amet</h2>
-          
-          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </motion.div>
-      </motion.section>
+        <div className="text-center max-w-md">
+          <span className="uppercase font-bold block text-lg md:text-xl">{home.featuredCollection.title}</span>
+          <Link
+            className="link text-sm no-underline uppercase block"
+            to={`/collection/${home.featuredCollection.slug}`}>
+              View the Collection
+          </Link>
+        </div>
+      </BackgroundImage>
     </>
   )
 }
 
 export default IndexPage
+
+export const query = graphql`
+  query HomeQuery {
+    home: datoCmsHome {
+      title
+      featuredCollection {
+        title
+        slug
+        featuredImage {
+          fluid(maxWidth: 900, imgixParams: { fm: "jpg", auto: "compress" }) {
+            ...GatsbyDatoCmsSizes
+          }
+        }
+      }
+    }
+  }
+`

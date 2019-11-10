@@ -2,17 +2,27 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        mono: [
-          'IBM Plex Mono',
-          'Menlo',
-          'Monaco',
-          'Consolas',
-          '"Liberation Mono"',
-          '"Courier New"',
-          'monospace',
-        ],
+        sans: ['HaasGrotDisp', 'Helvetica', 'Arial', 'sans-serif'],
       },
-    }
+    },
+    customForms: theme => ({
+      default: {
+        input: {
+          borderRadius: 0,
+          backgroundColor: theme('colors.gray.300'),
+          '&:focus': {
+            backgroundColor: theme('colors.gray.200'),
+          }
+        },
+        textarea: {
+          borderRadius: 0,
+          backgroundColor: theme('colors.gray.300'),
+          '&:focus': {
+            backgroundColor: theme('colors.gray.200'),
+          }
+        },
+      },
+    }),
   },
   plugins: [
     require('tailwindcss-transition')({
@@ -20,7 +30,8 @@ module.exports = {
       transitions: {
         'slow': 'all 0.7s ease',
       }  
-    })
+    }),
+    require('@tailwindcss/custom-forms')
   ],
   corePlugins: {
     container: false

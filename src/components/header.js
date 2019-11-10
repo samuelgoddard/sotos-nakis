@@ -1,57 +1,46 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import { motion } from 'framer-motion'
 
 const Header = ({ siteTitle }) => (
-  <header className="py-8 md:py-16">
-    
-    <div className="container">
-      <div className="flex flex-wrap items-center mb-4">
-        <motion.button
-          className="w-5 h-5 mr-3 block bg-black rounded"
-          animate={{ rotate: 180 }}
-          transition={{
-            loop: Infinity,
-            duration: 2,
-            ease: "anticipate"
-          }}
-        />
-
-        <Link className="font-bold block text-lg md:text-xl inline-block" to="/">
+  <header className="h-24 md:h-32 flex flex-wrap items-center relative z-20">
+    <div className="w-full">
+    <div className="container w-full">
+      <div className="flex flex-wrap items-center">
+        <Link className="font-bold block uppercase text-xl md:text-2xl inline-block" to="/">
           {siteTitle}
         </Link>
-      </div>
 
-      <nav>
-        <ul className="flex flex-wrap">
-          <li>
-            <Link
+        <nav className="ml-auto hidden md:block">
+          <ul className="flex flex-wrap">
+            <li>
+              <Link
+                activeClassName="is--active"
+                className="link text-sm no-underline uppercase mr-8"
+                to="/collection/spring-summer-2020">
+                  Collections
+              </Link>
+            </li>
+            <li>
+              <Link
+                activeClassName="is--active"
+                className="link text-sm no-underline uppercase mr-8"
+                to="/about">
+                  About
+              </Link>
+            </li>
+            <li>
+              <Link
               activeClassName="is--active"
-              className="link mr-3"
-              to="/">
-                Home
-            </Link>
-          </li>
-          <li>
-            <Link
-              activeClassName="is--active"
-              className="link mr-3"
-              to="/about">
-                About
-            </Link>
-          </li>
-          <li>
-            <a
-              className="link mr-3"
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://github.com/samuelgoddard/gatsby-tailwind-motion">
-                Github
-            </a>
-          </li>
-        </ul>
-      </nav>
+                className="link text-sm no-underline uppercase"
+                to="/projects">
+                  Projects
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
     </div>
   </header>
 )
