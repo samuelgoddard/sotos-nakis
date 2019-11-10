@@ -13,14 +13,14 @@ const Footer = ({ siteTitle }) => (
       <div className="flex flex-wrap items-center">
         <nav className="md:mr-auto">
           <ul className="flex flex-wrap">
-            <li>
+            {/* <li>
               <Link
                 activeClassName="is--active"
                 className="link text-gray-600 text-xs md:text-sm no-underline uppercase mr-3 md:mr-8"
                 to="/collection">
                   Collections
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link
                 activeClassName="is--active"
