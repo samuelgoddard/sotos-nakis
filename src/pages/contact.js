@@ -1,5 +1,7 @@
 import React from "react"
 import SEO from "../components/seo"
+import Footer from "../components/footer"
+
 // import { motion } from 'framer-motion'
 
 // const duration = 0.35
@@ -41,6 +43,8 @@ const ContactPage = () => {
           </div>
         </div>
       </div>
+
+      <Footer siteTitle="Sotos Nakis" />
     </>
   )
 }

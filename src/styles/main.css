@@ -16,40 +16,54 @@
 @import 'tailwindcss/utilities';
 
 .embla {
-  overflow: hidden;
+  width: 100%;
 }
 
+.embla__wrap {
+  position: relative;
+}
+
+.embla__viewport {
+  width: 100%;
+  overflow: hidden;
+}
 .embla__container {
   display: flex;
-
+  
   @screen md {
-    margin-left: -8px;
+    margin-left: -15px;
+  }
+}
+
+.embla__container--project {
+  @screen md {
+    margin-left: 0px;
   }
 }
 
 .embla__slide {
   position: relative;
-  flex: 0 0 auto;
-  width: 100%;
+  flex: 0 0 100%;
 
   @screen md {
-    width: 50%;
-    padding-left: 8px;
+    flex: 0 0 50%;
+    padding-left: 15px;
   }
 
   @screen xl {
-    width: 33.3%;
+    flex: 0 0 33.333333%;
+    padding-left: 15px;
   }
 }
 
 .embla__slide--project {
-
   @screen md {
-    width: 50%;
-    padding-left: 8px;
+    flex: 0 0 100%;
+    padding-left: 0px;
   }
 
   @screen xl {
-    width: 80%;
+    flex: 0 0 100%;
+    padding-left: 0px;
   }
 }

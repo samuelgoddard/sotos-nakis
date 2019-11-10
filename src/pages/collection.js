@@ -34,8 +34,8 @@ const CollectionPage = (embla) => {
         </div>
         
         <div className="overflow-hidden mb-8 md:mb-12">
-          <div class="flex flex-wrap md:-mx-6">
-            <div class="w-full md:w-1/2 md:px-6 mb-8 md:mb-0">
+          <div className="flex flex-wrap md:-mx-6">
+            <div className="w-full md:w-1/2 md:px-6 mb-8 md:mb-0">
               <img src="https://picsum.photos/400/490?grayscale" className="w-full block" alt="Temp Image" />
             </div>
             <div className="w-full md:w-1/2 md:px-6">

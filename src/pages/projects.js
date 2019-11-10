@@ -1,5 +1,6 @@
 import React from "react"
 import SEO from "../components/seo"
+import Footer from "../components/footer"
 import ProjectsCarousel from "../components/projectsCarousel"
 // import { motion } from 'framer-motion'
 
@@ -33,6 +34,8 @@ const ProjectsPage = (embla) => {
           <ProjectsCarousel />
         </div>
       </div>
+
+      <Footer siteTitle="Sotos Nakis" />
     </>
   )
 }

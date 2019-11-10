@@ -1,11 +1,33 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import { motion, AnimatePresence } from 'framer-motion'
 
 import Header from "./header"
 import Footer from "./footer"
 import "../styles/main.css"
 
+const duration = 0.35
+
+const variants = {
+  initial: {
+    opacity: 0,
+  },
+  enter: {
+    opacity: 1,
+    transition: {
+      duration: duration,
+      delay: duration,
+      when: 'beforeChildren',
+    },
+  },
+  exit: {
+    opacity: 0,
+    transition: {
+      duration: duration,
+    },
+  },
+}
 const Layout = ({ children, location }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -14,14 +36,37 @@ const Layout = ({ children, location }) => {
           title
         }
       }
+      allDatoCmsCollection {
+        edges {
+          node {
+            id
+            title
+            slug
+          }
+        }
+      }
     }
   `)
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      {children}
-      <Footer siteTitle={data.site.siteMetadata.title} />
+      {/* {data.allDatoCmsCollection.edges.map(({node}, index) =>
+        <span key={index}>
+          Test:{node.title}
+        </span>
+      )} */}
+      <Header siteTitle={data.site.siteMetadata.title} collections={data.allDatoCmsCollection.edges} />
+      <AnimatePresence>
+        <motion.main
+          key={location.pathname}
+          variants={variants}
+          initial="initial"
+          animate="enter"
+          exit="exit"
+        >
+        {children}
+        </motion.main>
+      </AnimatePresence>
     </>
   )
 }
@@ -31,3 +76,17 @@ Layout.propTypes = {
 }
 
 export default Layout
+
+export const query = graphql`
+  query LayoutQuery {
+    collections: allDatoCmsCollection {
+      edges {
+        node {
+          id
+          title
+          slug
+        }
+      }
+    }
+  }
+`

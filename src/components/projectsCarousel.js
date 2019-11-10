@@ -33,11 +33,11 @@ class ProjectCarousel extends Component {
               }}
               className="embla"
             >
-              <div className="embla__container max-w-full">
+              <div className="embla__container embla__container--project max-w-full">
                 <div className="embla__slide embla__slide--project">
                   <img
                     className="w-full block mb-px"
-                    src="https://picsum.photos/720/450?grayscale"
+                    src="https://picsum.photos/720/320?grayscale"
                     alt="Temp Image"
                   />
                   <span className="text-sm uppercase text-gray-600">Video Name</span>
@@ -45,7 +45,7 @@ class ProjectCarousel extends Component {
                 <div className="embla__slide embla__slide--project">
                   <img
                     className="w-full block mb-px"
-                    src="https://picsum.photos/720/450?grayscale"
+                    src="https://picsum.photos/720/320?grayscale"
                     alt="Temp Image"
                   />
                   <span className="text-sm uppercase text-gray-600">Video Name</span>
@@ -53,7 +53,7 @@ class ProjectCarousel extends Component {
                 <div className="embla__slide embla__slide--project">
                   <img
                     className="w-full block mb-px"
-                    src="https://picsum.photos/720/450?grayscale"
+                    src="https://picsum.photos/720/320?grayscale"
                     alt="Temp Image"
                   />
                   <span className="text-sm uppercase text-gray-600">Video Name</span>
@@ -61,7 +61,7 @@ class ProjectCarousel extends Component {
                 <div className="embla__slide embla__slide--project">
                   <img
                     className="w-full block mb-px"
-                    src="https://picsum.photos/720/450?grayscale"
+                    src="https://picsum.photos/720/320?grayscale"
                     alt="Temp Image"
                   />
                   <span className="text-sm uppercase text-gray-600">Video Name</span>
@@ -69,7 +69,7 @@ class ProjectCarousel extends Component {
                 <div className="embla__slide embla__slide--project">
                   <img
                     className="w-full block mb-px"
-                    src="https://picsum.photos/720/450?grayscale"
+                    src="https://picsum.photos/720/320?grayscale"
                     alt="Temp Image"
                   />
                   <span className="text-sm uppercase text-gray-600">Video Name</span>
@@ -77,12 +77,12 @@ class ProjectCarousel extends Component {
               </div>
             </EmblaCarouselReact>
             <button 
-              className="absolute top-0 left-0 mt-32 -ml-4 p-3 font-bold text-xl font-serid"
+              className="absolute top-0 left-0 mt-48 -ml-6 p-3 font-bold text-xl"
               onClick={() => this.embla.scrollPrev()}>
                 &larr;
             </button>
             <button
-              className="absolute top-0 right-0 mt-32 -mr-4 p-3 font-bold text-xl font-serid"
+              className="absolute top-0 right-0 mt-48 -mr-6 p-3 font-bold text-xl"
               onClick={() => this.embla.scrollNext()}>
                 &rarr;
             </button>
