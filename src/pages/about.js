@@ -25,7 +25,7 @@ const item = {
 const AboutPage = ({ data: { about } }) => {
   return (
     <>
-      <SEO title="About" />
+      <SEO meta={about.seoMetaTags} />
       <motion.section
         variants={container}
         initial="hidden" 
@@ -57,6 +57,9 @@ export default AboutPage
 export const query = graphql`
   query AboutQuery {
     about: datoCmsAbout {
+      seoMetaTags {
+        ...GatsbyDatoCmsSeoMetaTags
+      }
       title
       text
       backgroundImage {

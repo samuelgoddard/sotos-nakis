@@ -27,7 +27,7 @@ const item = {
 const IndexPage = ({ data: { home } }) => {
   return (
     <>
-      <SEO title={home.title} />
+      <SEO meta={home.seoMetaTags} />
       <motion.section
         variants={container}
         initial="hidden" 
@@ -66,6 +66,9 @@ export const query = graphql`
   query HomeQuery {
     home: datoCmsHome {
       title
+      seoMetaTags {
+        ...GatsbyDatoCmsSeoMetaTags
+      }
       featuredCollection {
         title
         slug
