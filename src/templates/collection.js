@@ -54,15 +54,22 @@ const CollectionPage = ({ data: { collection } }) => {
           </div>
           
           <div className="overflow-hidden mb-8 md:mb-12">
-            <motion.span
-              variants={item}
-              transition="easeInOut"
-              className="text-gray-600 uppercase block mb-2"
-            >
-              About the collection
-            </motion.span>
             <div className="flex flex-wrap md:-mx-6">
               <div className="w-full md:w-1/2 md:px-6 mb-8 md:mb-0">
+                <div className="flex flex-wrap items-center mb-2">
+                <div className="w-2/3">
+                  <motion.span
+                    variants={item}
+                    transition="easeInOut"
+                    className="text-gray-600 uppercase block mb-0"
+                  >
+                    About the collection
+                  </motion.span>
+                </div>
+                <div className="w-1/3 ml-auto">
+                  <div className="w-full h-1 bg-gray-100"></div>
+                </div>
+              </div>
                 <motion.div 
                   variants={item}
                   transition="easeInOut"
@@ -75,7 +82,7 @@ const CollectionPage = ({ data: { collection } }) => {
                   <motion.div 
                     variants={item}
                     transition="easeInOut"
-                    className="w-full lg:w-1/2 lg:px-6 flex flex-wrap"
+                    className="w-full lg:w-1/2 lg:px-6 flex flex-wrap md:mt-12"
                   >
                     <span className="w-full pb-6 lg:mb-12" dangerouslySetInnerHTML={{__html:collection.aboutTextColumn1}}></span>
                     
@@ -84,7 +91,7 @@ const CollectionPage = ({ data: { collection } }) => {
                   <motion.div 
                     variants={item}
                     transition="easeInOut"
-                    className="w-full lg:w-1/2 lg:px-6 flex flex-wrap"
+                    className="w-full lg:w-1/2 lg:px-6 flex flex-wrap md:mt-12"
                   >
                     <span className="w-full pb-6" dangerouslySetInnerHTML={{__html:collection.aboutTextColumn2}}></span>
                     
