@@ -6,7 +6,7 @@ import BackgroundImage from 'gatsby-background-image'
 
 import { motion } from 'framer-motion'
 
-const duration = 0.5
+const duration = 0.75
 
 const container = {
   visible: {
@@ -53,9 +53,13 @@ const IndexPage = ({ data: { home } }) => {
             </div>
           </BackgroundImage>
         </motion.div>
+        <motion.div 
+          variants={item}
+          transition="easeInOut"
+        >
+          <Footer siteTitle="Sotos Nakis" />
+        </motion.div>
       </motion.section>
-      
-      <Footer siteTitle="Sotos Nakis" />
     </>
   )
 }

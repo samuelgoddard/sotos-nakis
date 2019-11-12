@@ -4,7 +4,7 @@ import Footer from "../components/footer"
 import BackgroundImage from 'gatsby-background-image'
 import { motion } from 'framer-motion'
 
-const duration = 0.5
+const duration = 0.75
 
 const container = {
   visible: {
@@ -40,14 +40,18 @@ const AboutPage = ({ data: { about } }) => {
             className="bg-gray-300 h-screen w-full flex items-center justify-center -mt-24 md:-mt-32"
             fluid={about.backgroundImage.fluid}
           >
-            <div className="text-center max-w-md">
+            <div className="text-center max-w-md px-8">
               <span dangerouslySetInnerHTML={{__html:about.text}}></span>
             </div>
           </BackgroundImage>
         </motion.div>
+        <motion.div 
+          variants={item}
+          transition="easeInOut"
+        >
+          <Footer siteTitle="Sotos Nakis" />
+        </motion.div>
       </motion.section>
-
-      <Footer siteTitle="Sotos Nakis" />
     </>
   )
 }

@@ -3,7 +3,7 @@ import SEO from "../components/seo"
 import Footer from "../components/footer"
 import { motion } from 'framer-motion'
 
-const duration = 0.5
+const duration = 0.75
 
 const container = {
   visible: {
@@ -31,7 +31,7 @@ const NewsletterPage = () => {
           initial="hidden" 
           animate="visible"
         >
-        <div className="flex flex-wrap justify-center py-8 md:py-12">
+        <div className="flex flex-wrap justify-center py-8 md:py-12 min-h-screen">
           <div className="container">
             <div className="max-w-2xl content">
               <motion.div 
@@ -90,9 +90,14 @@ const NewsletterPage = () => {
             </div>
           </div>
         </div>
+        <motion.div 
+          variants={item}
+          transition="easeInOut"
+        >
+          <Footer siteTitle="Sotos Nakis" />
+        </motion.div>
       </motion.section>
 
-      <Footer siteTitle="Sotos Nakis" />
     </>
   )
 }

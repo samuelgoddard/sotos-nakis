@@ -2,42 +2,77 @@ import React from "react"
 import SEO from "../components/seo"
 import Footer from "../components/footer"
 import ProjectsCarousel from "../components/projectsCarousel"
-// import { motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 
-// const duration = 0.35
+const duration = 0.75
 
-// const container = {
-//   visible: {
-//     transition: {
-//       when: 'beforeChildren',
-//       staggerChildren: 0.2,
-//       delayChildren: duration,
-//     },
-//   },
-// }
-// const item = {
-//   hidden: { y: 20, opacity: 0 },
-//   visible: {
-//     y: 0,
-//     opacity: 1,
-//   },
-// }
+const container = {
+  visible: {
+    transition: {
+      when: 'beforeChildren',
+      staggerChildren: 0.2,
+      delayChildren: duration,
+    },
+  },
+}
+const item = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+  },
+}
 
-const ProjectsPage = (embla) => {
+const ProjectsPage = ({ data: { projects, projectsPage } }) => {
   return (
     <>
-      <SEO title="Projects" />
-      <div className="container">
-        <span className="text-gray-600 uppercase block mb-2">Projects</span>
-        
-        <div className="mb-12 md:mb-32">
-          <ProjectsCarousel />
+      <SEO meta={projectsPage.seoMetaTags} />
+      <motion.section
+        variants={container}
+        initial="hidden" 
+        animate="visible"
+      >
+        <div className="container">
+          <motion.span 
+            className="text-gray-600 uppercase block mb-2"
+            variants={item}
+            transition="easeInOut"
+          >
+            {projectsPage.title}
+          </motion.span>
+          
+          <div className="mb-12">
+            <ProjectsCarousel projects={projects.edges}/>
+          </div>
         </div>
-      </div>
-
-      <Footer siteTitle="Sotos Nakis" />
+        <motion.div 
+          variants={item}
+          transition="easeInOut"
+        >
+          <Footer siteTitle="Sotos Nakis" />
+        </motion.div>
+      </motion.section>
     </>
   )
 }
 
 export default ProjectsPage
+
+export const query = graphql`
+  query ProjectsQuery {
+    projectsPage: datoCmsProjectsPage {
+      title
+      seoMetaTags {
+        ...GatsbyDatoCmsSeoMetaTags
+      }
+    },
+    projects: allDatoCmsProject {
+      edges {
+        node {
+          title
+          embedCode
+        }
+      }
+    }
+  }
+`

@@ -1,6 +1,6 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React, { Component } from 'react'
+import React from 'react'
 
 class Header extends React.Component {
   constructor(props) {
@@ -18,6 +18,12 @@ class Header extends React.Component {
   handleClick = () => {
     this.setState({
       active: !this.state.active
+    });
+  }
+  
+  toggleOff = () => {
+    this.setState({
+      active: false
     });
   }
 
@@ -47,7 +53,7 @@ class Header extends React.Component {
                         key={index}
                         activeClassName="is--active"
                         className="link text-sm no-underline uppercase mb-2 block"
-                        onClick={this.handleClick}
+                        onClick={this.toggleOff}
                         to={`/collection/${node.slug}`}
                       >
                         {node.title}
@@ -60,6 +66,7 @@ class Header extends React.Component {
                   <Link
                     activeClassName="is--active"
                     className="link text-sm no-underline uppercase mr-8"
+                    onClick={this.toggleOff}
                     to="/about">
                       About
                   </Link>
@@ -68,6 +75,7 @@ class Header extends React.Component {
                   <Link
                   activeClassName="is--active"
                     className="link text-sm no-underline uppercase"
+                    onClick={this.toggleOff}
                     to="/projects">
                       Projects
                   </Link>

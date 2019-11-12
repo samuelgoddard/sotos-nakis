@@ -27,7 +27,7 @@ const item = {
 const CollectionPage = ({ data: { collection } }) => {
   return (
     <>
-      <SEO title={collection.title} />
+      <SEO meta={collection.seoMetaTags} />
       <motion.section
         variants={container}
         initial="hidden" 
@@ -54,6 +54,13 @@ const CollectionPage = ({ data: { collection } }) => {
           </div>
           
           <div className="overflow-hidden mb-8 md:mb-12">
+            <motion.span
+              variants={item}
+              transition="easeInOut"
+              className="text-gray-600 uppercase block mb-2"
+            >
+              About the collection
+            </motion.span>
             <div className="flex flex-wrap md:-mx-6">
               <div className="w-full md:w-1/2 md:px-6 mb-8 md:mb-0">
                 <motion.div 
@@ -101,6 +108,9 @@ export const query = graphql`
   query CollectionPostQuery($slug: String!) {
     collection: datoCmsCollection(slug: { eq: $slug }) {
       title
+      seoMetaTags {
+        ...GatsbyDatoCmsSeoMetaTags
+      }
       contentImage1 {
         fluid(maxWidth: 900, imgixParams: { fm: "jpg", auto: "compress", maxW: 640, maxH: 900}) {
           ...GatsbyDatoCmsSizes

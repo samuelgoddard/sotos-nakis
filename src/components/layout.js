@@ -4,7 +4,6 @@ import { useStaticQuery, graphql } from "gatsby"
 import { motion, AnimatePresence } from 'framer-motion'
 
 import Header from "./header"
-import Footer from "./footer"
 import "../styles/main.css"
 
 const duration = 0.35
