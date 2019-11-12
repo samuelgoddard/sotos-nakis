@@ -113,7 +113,7 @@ class Header extends React.Component {
           <div className="fixed top-0 left-0 right-0 bottom-0 bg-white z-30">
             <div className="container w-full h-24 md:h-32 flex flex-wrap items-center relative">
               <div className="flex flex-wrap items-center w-full">
-                <Link className="font-bold block uppercase text-xl md:text-2xl inline-block" to="/">
+                <Link className="font-bold block uppercase text-xl md:text-2xl inline-block" to="/" onClick={this.toggleTray}>
                   {this.state.siteTitle}
                 </Link>
 
