@@ -58,7 +58,7 @@ const ContactPage = ({ data: { contact } }) => {
               transition="easeInOut"
             >
               <span className="uppercase font-bold block text-lg">Press Enquiries</span>
-              <a className="link" href="mailto:press@sotosnakis.com">{contact.pressEnquiries}</a>
+              <a className="link" href="mailto:press@sotosnakis.com">{contact.pressEmail}</a>
             </motion.div>
           </div>
         </div>
