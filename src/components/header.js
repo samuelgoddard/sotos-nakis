@@ -123,7 +123,7 @@ class Header extends React.Component {
         </div>
 
         {this.state.trayOpen &&
-          <div className="fixed top-0 left-0 right-0 bottom-0 z-40">
+          <div className="fixed top-0 left-0 right-0 bottom-0 bg-white z-40">
             <div className="container w-full h-24 md:h-32 flex flex-wrap items-center relative">
               <div className="flex flex-wrap items-center w-full">
                 <Link className="font-bold block uppercase text-xl md:text-2xl inline-block" to="/" onClick={this.toggleTray}>
