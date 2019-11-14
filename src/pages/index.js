@@ -78,7 +78,7 @@ export const query = graphql`
         slug
         featuredImage {
           fluid(maxWidth: 1200, imgixParams: { fm: "png", maxW: 960, maxH: 640}) {
-            ...GatsbyDatoCmsSizes
+            ...GatsbyDatoCmsSizes_noBase64
           }
         }
       }

@@ -68,7 +68,7 @@ export const query = graphql`
       text
       backgroundImage {
         fluid(maxWidth: 1200, imgixParams: { fm: "png" }) {
-          ...GatsbyDatoCmsSizes
+          ...GatsbyDatoCmsSizes_noBase64
         }
       }
     }
