@@ -48,22 +48,26 @@ class ProjectCarousel extends Component {
             animate="visible"
           >
             <div className="relative">
-              <motion.button
-                  variants={item}
-                  transition="easeInOut"
-                  className="absolute top-0 left-0 mt-24 md:mt-48 xl:mt-64 -ml-6 2xl:-ml-10 p-1 font-bold text-xl font-serif appearance-none focus:outline-none z-10"
-                  onClick={() => this.embla.scrollPrev()}
-                >
-                &larr;
-              </motion.button>
-              <motion.button
-                variants={item}
-                transition="easeInOut"
-                className="absolute top-0 right-0 mt-24 md:mt-48 xl:mt-64 -mr-6 2xl:-mr-10 p-1 font-bold text-xl appearance-none focus:outline-none z-10"
-                onClick={() => this.embla.scrollNext()}
-              >
-                &rarr;
-              </motion.button>
+              {this.state.projects.length > 1 && (
+                <div>
+                  <motion.button
+                      variants={item}
+                      transition="easeInOut"
+                      className="absolute top-0 left-0 mt-24 md:mt-48 xl:mt-64 -ml-6 2xl:-ml-10 p-1 font-bold text-xl font-serif appearance-none focus:outline-none z-10"
+                      onClick={() => this.embla.scrollPrev()}
+                    >
+                    &larr;
+                  </motion.button>
+                  <motion.button
+                    variants={item}
+                    transition="easeInOut"
+                    className="absolute top-0 right-0 mt-24 md:mt-48 xl:mt-64 -mr-6 2xl:-mr-10 p-1 font-bold text-xl appearance-none focus:outline-none z-10"
+                    onClick={() => this.embla.scrollNext()}
+                  >
+                    &rarr;
+                  </motion.button>
+                </div>
+              )}
               <EmblaCarouselReact
                 emblaRef={c => (this.embla = c)}
                 htmlTagName={`div`}
