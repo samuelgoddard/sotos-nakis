@@ -37,12 +37,12 @@ const CollectionPage = ({ data: { collection } }) => {
           <motion.span
             variants={item}
             transition="easeInOut"
-            className="text-gray-600 uppercase block mb-2"
+            className="text-black uppercase block mb-2"
           >
             {collection.title}
           </motion.span>
           
-          <div className="mb-12 md:mb-32">
+          <div className="mb-12 md:mb-20">
             <motion.div 
               variants={item}
               transition="easeInOut"
@@ -53,21 +53,18 @@ const CollectionPage = ({ data: { collection } }) => {
             </motion.div>
           </div>
           
-          <div className="overflow-hidden mb-8 md:mb-12">
+          <div className="overflow-hidden mb-8 md:mb-24">
             <div className="flex flex-wrap md:-mx-6">
               <div className="w-full md:w-1/2 md:px-6 mb-8 md:mb-0">
                 <div className="flex flex-wrap items-center mb-2">
-                <div className="w-2/3">
+                <div className="w-full">
                   <motion.span
                     variants={item}
                     transition="easeInOut"
-                    className="text-gray-600 uppercase block mb-0"
+                    className="text-black uppercase block mb-0"
                   >
                     About the collection
                   </motion.span>
-                </div>
-                <div className="w-1/3 ml-auto">
-                  <div className="w-full h-1 bg-gray-100"></div>
                 </div>
               </div>
                 <motion.div 

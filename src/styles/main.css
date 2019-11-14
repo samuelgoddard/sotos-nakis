@@ -74,7 +74,7 @@
 
 /*! purgecss start ignore */
 .embed-container {
-  position: relative; padding-bottom: 77.25%; height: 0; overflow: hidden; max-width: 100%;
+  position: relative; padding-bottom: 45%; height: 0; overflow: hidden;;
 } 
 
 .embed-container iframe, .embed-container object, .embed-container embed {

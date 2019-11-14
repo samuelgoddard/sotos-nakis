@@ -97,9 +97,22 @@ class Header extends React.Component {
                       className="link text-sm no-underline uppercase"
                       onClick={this.toggleTray}>
                         {this.state.trayOpen ? (
-                          <span>Close</span>
+                          <span>
+                            <svg width="17" height="17" className="mr-1 mt-1" version="1.1">
+                              <g fill="#000" fill-rule="evenodd" stroke="none" stroke-width="1">
+                                <path d="M.015 16.278L16.278.015l.707.707L.722 16.985z"/>
+                                <path d="M.722.015l16.263 16.263-.707.707L.015.722z"/>
+                              </g>
+                            </svg>
+                          </span>
                         ) : (
-                          <span>Menu</span>
+                          <span>
+                            <svg width="23" height="13" version="1.1">
+                              <g fill="#000" fill-rule="evenodd" stroke="none" stroke-width="1">
+                                <path d="M0 0h23v1H0zM0 6h23v1H0zM0 12h23v1H0z"/>
+                              </g>
+                            </svg>
+                          </span>
                         )}
                     </button>
                   </li>
@@ -110,7 +123,7 @@ class Header extends React.Component {
         </div>
 
         {this.state.trayOpen &&
-          <div className="fixed top-0 left-0 right-0 bottom-0 bg-white z-30">
+          <div className="fixed top-0 left-0 right-0 bottom-0 z-40">
             <div className="container w-full h-24 md:h-32 flex flex-wrap items-center relative">
               <div className="flex flex-wrap items-center w-full">
                 <Link className="font-bold block uppercase text-xl md:text-2xl inline-block" to="/" onClick={this.toggleTray}>
@@ -124,9 +137,22 @@ class Header extends React.Component {
                         className="link text-sm no-underline uppercase"
                         onClick={this.toggleTray}>
                           {this.state.trayOpen ? (
-                            <span>Close</span>
+                            <span>
+                              <svg width="17" height="17" className="mr-1 mt-1" version="1.1">
+                                <g fill="#000" fill-rule="evenodd" stroke="none" stroke-width="1">
+                                  <path d="M.015 16.278L16.278.015l.707.707L.722 16.985z"/>
+                                  <path d="M.722.015l16.263 16.263-.707.707L.015.722z"/>
+                                </g>
+                              </svg>
+                            </span>
                           ) : (
-                            <span>Menu</span>
+                            <span>
+                              <svg width="23" height="13" version="1.1">
+                                <g fill="#000" fill-rule="evenodd" stroke="none" stroke-width="1">
+                                  <path d="M0 0h23v1H0zM0 6h23v1H0zM0 12h23v1H0z"/>
+                                </g>
+                              </svg>
+                            </span>
                           )}
                       </button>
                     </li>

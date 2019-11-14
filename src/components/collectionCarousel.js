@@ -49,6 +49,22 @@ class CollectionCarousel extends Component {
             animate="visible"
           >
             <div className="relative">
+            <motion.button
+                  variants={item}
+                  transition="easeInOut"
+                  className="absolute top-0 left-0 mt-32 md:mt-48 xl:mt-64 -ml-6 2xl:-ml-10 p-1 font-bold text-xl font-serif appearance-none focus:outline-none z-10"
+                  onClick={() => this.embla.scrollPrev()}
+                >
+                &larr;
+              </motion.button>
+              <motion.button
+                variants={item}
+                transition="easeInOut"
+                className="absolute top-0 right-0 mt-32 md:mt-48 xl:mt-64 -mr-6 md:-mr-2 2xl:-mr-6 p-1 font-bold text-xl appearance-none focus:outline-none z-10"
+                onClick={() => this.embla.scrollNext()}
+              >
+                &rarr;
+              </motion.button>
               <EmblaCarouselReact
                 emblaRef={c => (this.embla = c)}
                 htmlTagName={`div`}
@@ -70,27 +86,11 @@ class CollectionCarousel extends Component {
                       className="embla__slide"
                     >
                       <Img fluid={image.fluid} key={image.title} alt={image.alt} className="w-full block mb-px" />
-                      <span className="text-sm text-gray-600">{('0' + (index + 1)).slice(-2)}</span>
+                      <span className="text-sm text-black">{('0' + (index + 1)).slice(-2)}</span>
                     </motion.div>
                   )}
                 </div>
               </EmblaCarouselReact>
-              <motion.button
-                variants={item}
-                transition="easeInOut"
-                className="absolute top-0 left-0 mt-48 -ml-6 p-3 font-bold text-xl font-serif"
-                onClick={() => this.embla.scrollPrev()}
-              >
-                &larr;
-              </motion.button>
-              <motion.button
-                variants={item}
-                transition="easeInOut"
-                className="absolute top-0 right-0 mt-48 -mr-6 md:-mr-3 p-3 font-bold text-xl"
-                onClick={() => this.embla.scrollNext()}
-              >
-                &rarr;
-              </motion.button>
             </div>
           </motion.section>
         ) : (

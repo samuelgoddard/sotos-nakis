@@ -34,7 +34,7 @@ const ProjectsPage = ({ data: { projects, projectsPage } }) => {
       >
         <div className="container">
           <motion.span 
-            className="text-gray-600 uppercase block mb-2"
+            className="text-black uppercase block mb-2"
             variants={item}
             transition="easeInOut"
           >

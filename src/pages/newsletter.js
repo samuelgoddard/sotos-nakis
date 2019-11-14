@@ -1,5 +1,5 @@
 import React from "react"
-import SEO from "../components/seo"
+// import SEO from "../components/seo"
 import Footer from "../components/footer"
 import { motion } from 'framer-motion'
 
@@ -25,15 +25,15 @@ const item = {
 const NewsletterPage = () => {
   return (
     <>
-      <SEO title="Newsletter" />
+      {/* <SEO title="Newsletter" /> */}
         <motion.section
           variants={container}
           initial="hidden" 
           animate="visible"
         >
-        <div className="flex flex-wrap justify-center py-8 md:py-12 min-h-screen">
-          <div className="container">
-            <div className="max-w-2xl content">
+        <div className="flex flex-wrap justify-center items-center min-h-screen -mt-24 md:-mt-32">
+          <div className="container w-full">
+            <div className="max-w-2xl content mx-auto">
               <motion.div 
                 variants={item}
                 transition="easeInOut"
@@ -45,14 +45,38 @@ const NewsletterPage = () => {
                 variants={item}
                 transition="easeInOut"
               >
-                <p>Sign up for content</p>
-              </motion.div>
+                <div id="mc_embed_signup" className="w-full">
+                  <form action="https://sotosnakis.us5.list-manage.com/subscribe/post?u=a88839c8bc40d3ba72d83bb3a&amp;id=3eb474098b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" noValidate>
+                  <div id="mc_embed_signup_scroll">  
+                    <div className="flex flex-wrap -mx-2">
+                      <div className="w-1/2 px-2 mb-6 mc-field-group">
+                        <label className="text-sm uppercase" htmlFor="mce-LNAME">Last Name </label>
+                        <input type="text" defaultValue="" name="LNAME" className="required form-input mt-1 block w-full" placeholder="First Name" id="mce-LNAME" required />
+                      </div>
+                      <div className="w-1/2 px-2 mb-6 mc-field-group">
+                        <label className="text-sm uppercase" htmlFor="mce-FNAME">First Name </label>
+                        <input type="text" defaultValue="" name="FNAME" className="required form-input mt-1 block w-full" placeholder="First Name" id="mce-FNAME" required />
+                      </div>
+                    </div>
+                    <div className="mc-field-group mb-6">
+                      <label className="text-sm uppercase" htmlFor="mce-EMAIL">Email Address </label>
+                      <input type="email" defaultValue="" name="EMAIL" className="mt-1 block w-full required email form-input" id="mce-EMAIL" placeholder="Email Address" />
+                    </div>
+                    <div id="mce-responses" className="clear">
+                      <div className="response hidden" id="mce-error-response"></div>
+                      <div className="response hidden" id="mce-success-response"></div>
+                    </div>
+                      <div className="sr-only" aria-hidden="true">
+                        <input type="text" name="b_a88839c8bc40d3ba72d83bb3a_3eb474098b" tabIndex="-1" defaultValue=""/>
+                      </div>
+                      <div className="clear">
+                        <input type="submit" defaultValue="Subscribe" name="subscribe" id="mc-embedded-subscribe" className="bg-black hover:bg-gray-800 text-white py-3 px-10 uppercase cursor-pointer" />
+                      </div>
+                    </div>
+                  </form>
+                </div>
 
-              <motion.div 
-                variants={item}
-                transition="easeInOut"
-              >
-                <form className="">
+                {/* <form className="">
                   <div className="flex flex-wrap -mx-2">
                     <div className="w-1/2 px-2 mb-6">
                       <label className="block">
@@ -85,7 +109,7 @@ const NewsletterPage = () => {
                   <button className="bg-black hover:bg-gray-800 text-white py-3 px-10 uppercase" type="submit">
                     Submit
                   </button>
-                </form>
+                </form> */}
               </motion.div>
             </div>
           </div>
