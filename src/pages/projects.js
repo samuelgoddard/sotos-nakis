@@ -33,16 +33,17 @@ const ProjectsPage = ({ data: { projects, projectsPage } }) => {
         animate="visible"
       >
         <div className="container">
-          <motion.span 
-            className="text-black uppercase block mb-2"
-            variants={item}
-            transition="easeInOut"
-          >
-            {projectsPage.title}
-          </motion.span>
-          
-          <div className="mb-12">
-            <ProjectsCarousel projects={projects.edges}/>
+          <div className="mb-12 min-h-screen flex items-center w-full -mt-24 md:-mt-32">
+            <div className="w-full">
+              <motion.span 
+                className="text-black uppercase block mb-2"
+                variants={item}
+                transition="easeInOut"
+              >
+                {projectsPage.title}
+              </motion.span>
+              <ProjectsCarousel projects={projects.edges}/>
+            </div>
           </div>
         </div>
         <motion.div 

@@ -86,12 +86,14 @@ class ProjectCarousel extends Component {
                       key={index}
                       variants={item}
                       transition="easeInOut"
-                      className="embla__slide--project w-full bg-black"
+                      className="embla__slide--project w-full"
                     >
-                      <div className="embed-container w-full max-w-3xl mb-2 mx-auto">
-                        <div
-                          dangerouslySetInnerHTML={{ __html: project.node.embedCode }}
-                        ></div>
+                      <div className="w-full bg-black">
+                        <div className="embed-container w-full max-w-3xl mb-2 mx-auto">
+                          <div
+                            dangerouslySetInnerHTML={{ __html: project.node.embedCode }}
+                          ></div>
+                        </div>
                       </div>
                       <span className="text-sm text-black uppercase">{ project.node.title}</span>
                     </motion.div>
