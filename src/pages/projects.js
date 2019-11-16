@@ -33,7 +33,7 @@ const ProjectsPage = ({ data: { projects, projectsPage } }) => {
         animate="visible"
       >
         <div className="container">
-          <div className="mb-12 min-h-screen flex items-center w-full -mt-24 md:-mt-32">
+          <div className="mb-12 min-h-screen md:min-h-0 flex items-center w-full -mt-24 md:mt-0">
             <div className="w-full">
               <motion.span 
                 className="text-black uppercase block mb-2"
