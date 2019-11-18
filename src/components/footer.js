@@ -11,7 +11,7 @@ const Footer = ({ siteTitle }) => (
       </Link>
 
       <div className="flex flex-wrap items-center">
-        <nav className="md:mr-auto">
+        <nav className="w-full md:w-auto md:mr-auto">
           <ul className="flex flex-wrap">
             {/* <li>
               <Link
@@ -47,7 +47,7 @@ const Footer = ({ siteTitle }) => (
           </ul>
         </nav>
 
-        <nav className="md:ml-auto">
+        <nav className="w-full md:w-auto md:ml-auto">
           <ul className="flex flex-wrap">
             <li>
               <Link
