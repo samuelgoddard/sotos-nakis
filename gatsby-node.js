@@ -9,7 +9,13 @@ exports.createPages = ({ graphql, actions }) => {
     fromPath: "https://sotos-nakis.netlify.com/*",
     toPath: "https://sotosnakis.com/:splat",
     isPermanent: true
+  }),
+  createRedirect({
+    fromPath: "https://sotos-nakis.netlify.com/",
+    toPath: "https://sotosnakis.com/",
+    isPermanent: true
   })
+
 
   return new Promise((resolve, reject) => {
     graphql(`
