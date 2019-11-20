@@ -3,6 +3,13 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
+  const { createRedirect } = actions
+
+  createRedirect({
+    fromPath: "https://sotos-nakis.netlify.com/*",
+    toPath: "https://sotosnakis.com/:splat",
+    isPermanent: true
+  })
 
   return new Promise((resolve, reject) => {
     graphql(`

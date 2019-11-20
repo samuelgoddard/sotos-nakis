@@ -24,6 +24,9 @@ module.exports = {
         whitelistPatterns: [/is-active/],
       }
     },
+    {
+      resolve: `gatsby-plugin-netlify`,
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
