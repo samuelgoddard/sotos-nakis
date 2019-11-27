@@ -39,8 +39,8 @@ const ContactPage = ({ data: { contact } }) => {
               variants={item}
               transition="easeInOut"
             >
-              <span className="uppercase font-bold block text-lg">General Enquiries</span>
-              <a className="link" href="mailto:info@sotosnakis.com">{contact.generalEnquiriesEmail}</a>
+              <span className="uppercase font-bold block text-lg">{contact.firstHeading}</span>
+              <a className="link" href="mailto:info@sotosnakis.com">{contact.firstEmail}</a>
             </motion.div>
           </div>
           <div className="w-full md:w-1/3 mb-8 md:mb-0 text-center">
@@ -48,8 +48,8 @@ const ContactPage = ({ data: { contact } }) => {
               variants={item}
               transition="easeInOut"
             >
-              <span className="uppercase font-bold block text-lg">Wholesale Enquiries</span>
-              <a className="link" href="mailto:sales@sotosnakis.com">{contact.salesEmail}</a>
+              <span className="uppercase font-bold block text-lg">{contact.secondHeading}</span>
+              <a className="link" href="mailto:sales@sotosnakis.com">{contact.secondEmail}</a>
             </motion.div>
           </div>
           <div className="w-full md:w-1/3 mb-8 md:mb-0 text-center">
@@ -57,8 +57,8 @@ const ContactPage = ({ data: { contact } }) => {
               variants={item}
               transition="easeInOut"
             >
-              <span className="uppercase font-bold block text-lg">Press Enquiries</span>
-              <a className="link" href="mailto:press@sotosnakis.com">{contact.pressEmail}</a>
+              <span className="uppercase font-bold block text-lg">{contact.thirdHeading}</span>
+              <a className="link" href="mailto:press@sotosnakis.com">{contact.thirdEmail}</a>
             </motion.div>
           </div>
         </div>
@@ -83,9 +83,12 @@ export const query = graphql`
       seoMetaTags {
         ...GatsbyDatoCmsSeoMetaTags
       }
-      generalEnquiriesEmail
-      salesEmail
-      pressEmail
+      firstHeading
+      firstEmail
+      secondHeading
+      secondEmail
+      thirdHeading
+      thirdEmail
     }
   }
 `

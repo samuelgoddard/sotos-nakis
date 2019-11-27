@@ -31,7 +31,7 @@ const NewsletterPage = () => {
           initial="hidden" 
           animate="visible"
         >
-        <div className="flex flex-wrap justify-center items-center min-h-screen -mt-24 md:-mt-32">
+        <div className="flex flex-wrap justify-center items-center min-h-screen lg:-mt-32">
           <div className="container w-full">
             <div className="max-w-2xl content mx-auto">
               <motion.div 
