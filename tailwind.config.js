@@ -1,6 +1,9 @@
 module.exports = {
   theme: {
     extend: {
+      screens: {
+        'landscape': {'raw': '(orientation: landscape)'},
+      },
       fontFamily: {
         sans: ['HaasGrotDisp', 'Helvetica', 'Arial', 'sans-serif'],
       },
